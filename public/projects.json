@@ -1,0 +1,35 @@
+[
+    {
+      "title": "OSKY CHATBOT",
+      "description": "Osky Chatbot is an intelligent virtual assistant designed to enhance the user experience at festivals. Using Natural Language Processing (NLP), it provides accurate answers to questions about artists, tickets, and transportation.",
+      "images": [
+        "/projects/chatbot/osky-1.png",
+        "/projects/chatbot/osky-2.png",
+        "/projects/chatbot/osky-3.png"
+      ],
+      "github": "https://github.com/kiprinel05/Java-chatbot"
+    },
+    {
+      "title": "VIRTUAL CATALOG",
+      "description": "Osky Chatbot is an intelligent virtual assistant designed to enhance the user experience at festivals. Using Natural Language Processing (NLP), it provides accurate answers to questions about artists, tickets, and transportation.",
+      "images": [
+        "/projects/virtual-catalog/catalog-1.png",
+        "/projects/virtual-catalog/catalog-2.png",
+        "/projects/virtual-catalog/catalog-3.png",
+        "/projects/virtual-catalog/catalog-4.png",
+        "/projects/virtual-catalog/catalog-5.png"
+
+      ],
+      "github": "https://github.com/kiprinel05/catalog-virtual"
+    },
+    {
+      "title": "C# CALCULATOR",
+      "description": "Osky Chatbot is an intelligent virtual assistant designed to enhance the user experience at festivals. Using Natural Language Processing (NLP), it provides accurate answers to questions about artists, tickets, and transportation.",
+      "images": [
+        "/projects/csharp-calculator/calculator-1.png",
+        "/projects/csharp-calculator/calculator-2.png"
+      ],
+      "github": "https://github.com/kiprinel05/Java-chatbot"
+    }
+  ]
+  
