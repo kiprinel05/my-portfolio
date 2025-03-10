@@ -4,9 +4,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import ParticlesBackground from "./ParticlesBackground";
-import { Github } from "lucide-react"; // Importă iconița Github
+import { Github } from "lucide-react";
 
-import profilePic from "../assets/main-pic-2.png";
+import profilePic from "../assets/logo.png";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -54,8 +54,10 @@ const HeroSection = () => {
           variants={itemVariants}
           custom={1}
         >
-          <h1 className="text-5xl font-bold mb-6">Welcome to my portfolio!</h1>
-          <p className="text-xl text-gray-300 mb-6">
+          <h1 className="text-6xl font-bold mb-6 font-mytitle">
+            Welcome to my portfolio!
+          </h1>
+          <p className="text-xl text-gray-300 mb-6 font-mysubtitle">
             I am a web developer passionate about React, Tailwind CSS, and
             Three.js.
           </p>

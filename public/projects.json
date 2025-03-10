@@ -1,35 +1,59 @@
 [
-    {
-      "title": "OSKY CHATBOT",
-      "description": "Osky Chatbot is an intelligent virtual assistant designed to enhance the user experience at festivals. Using Natural Language Processing (NLP), it provides accurate answers to questions about artists, tickets, and transportation.",
-      "images": [
-        "/projects/chatbot/osky-1.png",
-        "/projects/chatbot/osky-2.png",
-        "/projects/chatbot/osky-3.png"
-      ],
-      "github": "https://github.com/kiprinel05/Java-chatbot"
-    },
-    {
-      "title": "VIRTUAL CATALOG",
-      "description": "Osky Chatbot is an intelligent virtual assistant designed to enhance the user experience at festivals. Using Natural Language Processing (NLP), it provides accurate answers to questions about artists, tickets, and transportation.",
-      "images": [
-        "/projects/virtual-catalog/catalog-1.png",
-        "/projects/virtual-catalog/catalog-2.png",
-        "/projects/virtual-catalog/catalog-3.png",
-        "/projects/virtual-catalog/catalog-4.png",
-        "/projects/virtual-catalog/catalog-5.png"
-
-      ],
-      "github": "https://github.com/kiprinel05/catalog-virtual"
-    },
-    {
-      "title": "C# CALCULATOR",
-      "description": "Osky Chatbot is an intelligent virtual assistant designed to enhance the user experience at festivals. Using Natural Language Processing (NLP), it provides accurate answers to questions about artists, tickets, and transportation.",
-      "images": [
-        "/projects/csharp-calculator/calculator-1.png",
-        "/projects/csharp-calculator/calculator-2.png"
-      ],
-      "github": "https://github.com/kiprinel05/Java-chatbot"
-    }
-  ]
-  
+  {
+    "title": "OSKY CHATBOT",
+    "subtitle": "Intelligent Virtual Assistant for Festivals",
+    "description": "Osky Chatbot is an intelligent virtual assistant designed to enhance the user experience at festivals. Using Natural Language Processing (NLP), it provides accurate answers to questions about artists, tickets, and transportation.",
+    "features": [
+      "Natural Language Processing (NLP) for understanding user queries",
+      "Accurate information about artists, tickets, and transportation",
+      "User-friendly interface for seamless interaction",
+      "Scalable architecture to handle high traffic during festivals"
+    ],
+    "technologies": ["Java", "NLP Libraries", "Spring Boot", "REST APIs"],
+    "images": [
+      "/projects/chatbot/osky-1.png",
+      "/projects/chatbot/osky-2.png",
+      "/projects/chatbot/osky-3.png"
+    ],
+    "github": "https://github.com/kiprinel05/Java-chatbot"
+  },
+  {
+    "title": "VIRTUAL CATALOG",
+    "subtitle": "Interactive Digital Catalog for Businesses",
+    "description": "Virtual Catalog is designed for managing students, courses, and professors in a Faculty of Computer Science. It is currently a work in progress, with exciting features on the way!",
+    "features": [
+      "User Authentication: Secure login system",
+      "Student Management: View, add, and delete students",
+      "Course & Professor Management: Organize academic courses and faculty",
+      "Database Integration: Uses PostgreSQL for efficient data storage",
+      "Simple & Interactive Frontend: Built with HTML, CSS, and JavaScript"
+    ],
+    "technologies": ["Spring Boot", "Spring Security", "PostgreSQL", "Maven", "HTML/CSS/JS"],
+    "images": [
+      "/projects/virtual-catalog/catalog-1.png",
+      "/projects/virtual-catalog/catalog-2.png",
+      "/projects/virtual-catalog/catalog-3.png",
+      "/projects/virtual-catalog/catalog-4.png",
+      "/projects/virtual-catalog/catalog-5.png"
+    ],
+    "github": "https://github.com/kiprinel05/catalog-virtual"
+  },
+  {
+    "title": "C# CALCULATOR",
+    "subtitle": "Simple and Efficient Calculator Application",
+    "description": "Windows Calculator - developed in WPF (Windows Presentation Foundation) using C#. The calculator has two main modes: Standard and Programmer, and it is still under development",
+    "features": [
+      "Basic arithmetic operations (addition, subtraction, multiplication, division)",
+      "Advanced functions: square root, square, reciprocal, percentage, sign change",
+      "Memory: store, add, subtract, recall, and view memory stack",
+      "Conversions between number bases: HEX, DEC, OCT, BIN",
+      "Bitwise operations: AND, OR, XOR, NOT, bit shifting"
+    ],
+    "technologies": ["C#", ".NET Framework", "Windows Forms"],
+    "images": [
+      "/projects/csharp-calculator/calculator-1.png",
+      "/projects/csharp-calculator/calculator-2.png"
+    ],
+    "github": "https://github.com/kiprinel05/Windows-Calculator"
+  }
+]

@@ -34,7 +34,7 @@ const ProjectsSection = () => {
   return (
     <section className="bg-gray-100 text-gray-900 py-20 px-4" id="projects">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-4xl font-bold mb-10 text-center">
+        <h2 className="text-5xl font-bold mb-10 text-center font-mytitle">
           My Personal Projects
         </h2>
 
@@ -56,7 +56,7 @@ const ProjectsSection = () => {
                 <Maximize2 size={20} />
               </div>
 
-              <div className="absolute inset-0 bg-black/50 flex items-center justify-center text-white text-xl font-bold rounded-2xl">
+              <div className="absolute inset-0 bg-black/50 flex items-center justify-center text-white text-xl font-bold rounded-2xl font-mysubtitle">
                 {project.title}
               </div>
             </motion.div>
@@ -86,7 +86,7 @@ const ProjectsSection = () => {
                 >
                   <X size={28} />
                 </button>
-                <h2 className="text-3xl font-bold mb-2 text-gray-900">
+                <h2 className="text-3xl font-bold mb-2 text-gray-900 font-mysubtitle">
                   {selectedProject.title}
                 </h2>
                 {selectedProject.subtitle && (
@@ -103,17 +103,17 @@ const ProjectsSection = () => {
                   <Github size={20} className="mr-2" />
                   View on GitHub
                 </a>
-                <p className="text-gray-700 mb-6 px-4">
+                <p className="text-gray-700 mb-6 px-4 font-poppins">
                   {selectedProject.description}
                 </p>
 
                 {/* Listă de funcționalități */}
                 {selectedProject.features && (
                   <div className="w-full text-left mb-6">
-                    <h4 className="text-xl font-semibold mb-2 text-gray-900">
+                    <h4 className="text-xl font-semibold mb-2 text-gray-900 font-mysubtitle">
                       Features
                     </h4>
-                    <ul className="list-disc list-inside text-gray-700">
+                    <ul className="list-disc list-inside text-gray-700 font-poppins">
                       {selectedProject.features.map((feature, idx) => (
                         <li key={idx} className="mb-1">
                           {feature}
@@ -126,14 +126,14 @@ const ProjectsSection = () => {
                 {/* Tehnologii folosite */}
                 {selectedProject.technologies && (
                   <div className="w-full text-left mb-6">
-                    <h4 className="text-xl font-semibold mb-2 text-gray-900">
+                    <h4 className="text-xl font-semibold mb-2 text-gray-900 font-mysubtitle">
                       Technologies Used
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {selectedProject.technologies.map((tech, idx) => (
                         <span
                           key={idx}
-                          className="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm"
+                          className="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm font-poppins"
                         >
                           {tech}
                         </span>
@@ -144,20 +144,24 @@ const ProjectsSection = () => {
 
                 {/* Container imagini - FLEX ROW */}
                 <div className="w-full">
-                  <h4 className="text-xl font-semibold mb-4 text-gray-900">
+                  <h4 className="text-xl font-semibold mb-4 text-gray-900 font-mysubtitle">
                     Screenshots
                   </h4>
-                  <div className="flex gap-4 overflow-x-auto max-w-full pb-4">
+                  <div className="flex justify-center gap-4 overflow-x-auto max-w-full pb-4">
                     {selectedProject.images.map((img, idx) => (
-                      <motion.img
+                      <motion.div
                         key={idx}
-                        src={img}
-                        alt={`Project Image ${idx}`}
-                        className="w-48 h-32 object-cover rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform"
+                        className="flex-shrink-0 w-48 h-32 rounded-lg shadow-md overflow-hidden cursor-pointer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
                         onClick={() => setSelectedImage(img)}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                      />
+                      >
+                        <img
+                          src={img}
+                          alt={`Project Image ${idx}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </motion.div>
                     ))}
                   </div>
                 </div>

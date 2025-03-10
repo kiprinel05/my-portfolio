@@ -13,7 +13,7 @@ const ContactSection = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl font-bold mb-4"
+          className="text-3xl font-bold mb-4 font-mytitle"
         >
           Contact Me
         </motion.h2>
@@ -33,7 +33,7 @@ const ContactSection = () => {
             <input
               type="text"
               placeholder="Your Name"
-              className="w-full bg-gray-800 border border-gray-700 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400 transition text-sm"
+              className="w-full bg-gray-800 border border-gray-700 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400 transition text-sm font-roboto"
             />
           </motion.div>
 
@@ -45,7 +45,7 @@ const ContactSection = () => {
             <input
               type="email"
               placeholder="Your Email"
-              className="w-full bg-gray-800 border border-gray-700 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400 transition text-sm"
+              className="w-full bg-gray-800 border border-gray-700 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400 transition text-sm font-roboto"
             />
           </motion.div>
 
@@ -56,7 +56,7 @@ const ContactSection = () => {
           >
             <textarea
               placeholder="Your Message"
-              className="w-full bg-gray-800 border border-gray-700 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400 transition text-sm"
+              className="w-full bg-gray-800 border border-gray-700 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-gray-400 transition text-sm font-roboto"
               rows={4}
             ></textarea>
           </motion.div>
@@ -85,7 +85,7 @@ const ContactSection = () => {
           className="mt-8 flex items-center justify-center md:justify-start gap-4"
         >
           {/* Textul "Follow Me" */}
-          <h3 className="text-xl font-semibold">Follow Me</h3>
+          <h3 className="text-xl font-semibold font-mysubtitle">Follow Me</h3>
 
           {/* Butoanele pentru rețele sociale */}
           <div className="flex gap-4">
