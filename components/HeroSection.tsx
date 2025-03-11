@@ -6,7 +6,7 @@ import Image from "next/image";
 import ParticlesBackground from "./ParticlesBackground";
 import { Github } from "lucide-react";
 
-import profilePic from "../assets/logo.png";
+import profilePic from "../assets/main-pic-2.png";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -35,7 +35,7 @@ const HeroSection = () => {
       >
         {}
         <motion.div
-          className="w-full md:w-1/2 flex justify-center"
+          className="w-full md:w-1/2 flex justify-center order-2 md:order-1"
           variants={itemVariants}
           custom={-1}
         >
@@ -50,7 +50,7 @@ const HeroSection = () => {
 
         {}
         <motion.div
-          className="w-full md:w-1/2 text-center md:text-left"
+          className="w-full md:w-1/2 text-center md:text-left order-1 md:order-2"
           variants={itemVariants}
           custom={1}
         >
@@ -61,20 +61,22 @@ const HeroSection = () => {
             I am a web developer passionate about React, Tailwind CSS, and
             Three.js.
           </p>
-          <a
-            href="https://github.com/kiprinel05"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-lg transition duration-300 flex items-center gap-2"
+          <div className="flex justify-center md:justify-start">
+            <a
+              href="https://github.com/kiprinel05"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <Github size={20} /> {/* Iconița Github */}
-              Check out my GitHub
-            </motion.button>
-          </a>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-lg transition duration-300 flex items-center gap-2"
+              >
+                <Github size={20} />
+                Check out my GitHub
+              </motion.button>
+            </a>
+          </div>
         </motion.div>
       </motion.div>
     </section>
