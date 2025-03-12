@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Github } from "lucide-react";
 
@@ -25,6 +25,18 @@ const ProjectPopup: React.FC<ProjectPopupProps> = ({
   onClose,
   onImageClick,
 }) => {
+  // Adăugăm event listener pentru tasta ESC
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
+
   if (!project) return null;
 
   return (
@@ -34,21 +46,25 @@ const ProjectPopup: React.FC<ProjectPopupProps> = ({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
         onClick={onClose}
       >
         <motion.div
-          className="relative bg-white rounded-2xl p-8 max-w-4xl w-full shadow-xl border border-white/20 overflow-auto max-h-[80vh] flex flex-col items-center text-center"
+          className="relative bg-white rounded-2xl p-8 max-w-4xl w-full shadow-xl border border-white/20 overflow-auto max-h-[80vh] flex flex-col items-center text-center custom-scrollbar"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.8, opacity: 0 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
           onClick={(e) => e.stopPropagation()}
         >
+          {/* Butonul de X în colțul div-ului și alb */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-gray-700 hover:text-gray-500 transition-transform hover:rotate-90"
+            className="absolute top-4 right-4 p-2 bg-white rounded-full shadow-md hover:bg-gray-100 transition-transform hover:rotate-90"
           >
-            <X size={28} />
+            <X size={24} className="text-gray-700" />
           </button>
+
           <h2 className="text-3xl font-bold mb-2 text-gray-900 font-mysubtitle">
             {project.title}
           </h2>

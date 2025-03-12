@@ -1,9 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Maximize2 } from "lucide-react";
-import { useInView } from "react-intersection-observer";
 
 interface Project {
   title: string;
@@ -16,58 +15,57 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-  });
+  const [isHovered, setIsHovered] = useState(false); // Stare pentru hover
 
   return (
-    <motion.div
-      ref={ref}
-      onClick={onClick}
-      className="relative cursor-pointer h-60 rounded-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300 group"
-      style={{
-        backgroundImage: `url(${project.images[0]})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        opacity: 0.3,
-      }}
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={inView ? { opacity: 1, scale: 1 } : {}}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+    <div
+      className="relative flex flex-col items-center group cursor-pointer"
+      onMouseEnter={() => setIsHovered(true)} // Setează hover la true
+      onMouseLeave={() => setIsHovered(false)} // Setează hover la false
     >
-      {/* Border animation */}
-      <div className="absolute inset-0 rounded-2xl overflow-hidden">
-        <div className="absolute inset-0 border-2 border-transparent group-hover:border-blue-500 group-hover:animate-border-load transition-all duration-1000 ease-in-out" />
-      </div>
-
-      <div className="absolute top-2 right-2 p-2 text-white hover:text-white transition">
-        <Maximize2 size={20} />
-      </div>
-
-      <div className="absolute inset-0 flex items-center justify-center text-white text-xl font-bold rounded-2xl font-mysubtitle">
+      <motion.div
+        className="absolute text-white text-2xl font-bold font-mysubtitle"
+        initial={{ y: 30, opacity: 0 }} // Titlul este ascuns inițial
+        animate={{
+          y: isHovered ? -40 : 30, // Mișcă titlul în sus sau în jos
+          opacity: isHovered ? 1 : 0, // Face titlul vizibil sau invizibil
+        }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
         {project.title}
-      </div>
+        <motion.div
+          className="w-32 h-1 bg-blue-500 rounded-full mx-auto mt-1"
+          initial={{ scaleX: 0 }} // Underline-ul este ascuns inițial
+          animate={{ scaleX: isHovered ? 1 : 0 }} // Underline-ul apare sau dispare
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }} // Delay pentru underline
+        />
+      </motion.div>
 
-      <style jsx>{`
-        @keyframes border-load {
-          0% {
-            clip-path: inset(0 100% 100% 0);
-          }
-          25% {
-            clip-path: inset(0 0 100% 0);
-          }
-          50% {
-            clip-path: inset(0 0 0 0);
-          }
-          100% {
-            clip-path: inset(0 0 0 0);
-          }
-        }
-      `}</style>
-    </motion.div>
+      {/* Cardul proiectului */}
+      <motion.div
+        onClick={onClick}
+        className="relative h-60 w-full rounded-2xl overflow-hidden"
+        style={{
+          backgroundImage: `url(${project.images[0]})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+        initial={{ opacity: 0, scale: 0.9 }} // Cardul este inițial invizibil și mic
+        whileInView={{ opacity: 1, scale: 1 }} // Cardul apare și se scalează la intrarea în view
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        whileHover={{ y: 20 }} // Cardul se mișcă în jos la hover
+      >
+        {/* Border animation */}
+        <div className="absolute inset-0 rounded-2xl overflow-hidden">
+          <div className="absolute inset-0 border-2 border-transparent transition-all duration-1000 ease-in-out group-hover:border-blue-500" />
+        </div>
+
+        {/* Icon */}
+        <div className="absolute top-2 right-2 p-2 text-white hover:text-white transition">
+          <Maximize2 size={20} />
+        </div>
+      </motion.div>
+    </div>
   );
 };
 
